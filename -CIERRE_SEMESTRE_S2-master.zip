@@ -1,0 +1,44 @@
+ejemplos = sample(c("positivo", "negativo", "neutros"), 100, replace = TRUE)
+##Ejercicio 1
+length(ejemplos[ejemplos=="positivo"])
+length(ejemplos[ejemplos=="neutros"])
+length(ejemplos[ejemplos=="negativo"])
+##Ejercicio 2
+set.seed(10)
+ejemplos = sample(c("positivo","negativo","neutros"), 10, replace = TRUE)
+length(ejemplos[ejemplos=="positivo"])
+length(ejemplos[ejemplos=="neutros"])
+length(ejemplos[ejemplos=="negativo"])
+##Ejercicio 3 
+set.seed(66)
+ejemplos = sample(c("positivo","negativo","neutros"), 66, replace = TRUE)
+length(ejemplos[ejemplos=="positivo"])
+length(ejemplos[ejemplos=="neutros"])
+length(ejemplos[ejemplos=="negativo"])
+##Ejercicio 4
+CartasSacadas=sample(c("A",2,3,4,5,6,7,8,9,10,"J","Q","K"),31,replace=TRUE)
+mas1<-c(2:6)
+menos1<-c("A","J","Q","K",10)
+neutros<-c(7:9)
+sample(CartasSacadas,replace=T)
+Cuenta<-0
+for (i in 1:length(CartasSacadas)){
+  if(CartasSacadas[i]==2|CartasSacadas[i]==3|CartasSacadas[i]==4|CartasSacadas[i]==5|CartasSacadas[i]==6) {
+    Cuenta<-Cuenta+1 } else if (CartasSacadas[i]=="A"|CartasSacadas[i]=="J"|CartasSacadas[i]=="Q"|CartasSacadas[i]=="K"|CartasSacadas[i]==10){
+      Cuenta<-Cuenta-1} else if (CartasSacadas[i]==7|CartasSacadas[i]==8|CartasSacadas[i]==9){
+        Cuenta<-Cuenta+0
+      }
+}
+set.seed(31)
+mas1<-c(2:6)
+menos1<-c("A","J","Q","K",10)
+neutros<-c(7:9)
+cuenta2<-0
+variable<-mas1
+for (i in 1:length(CartasSacadas)){ for (n in 1:length(variable)){
+  if(CartasSacadas[i]==mas1[n]){cuenta2<-cuenta2+1}}
+  variable<-menos1
+  for(n in 1:length(variable)){
+    if(CartasSacadas[i]==menos1[n]){cuenta2<-cuenta2-1}
+  }
+}
